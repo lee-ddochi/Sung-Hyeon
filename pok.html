@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 컨텐츠 찾기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR&family=Jua&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" href="../css/a071.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>포켓몬스터</h1>
+            <p>오늘의 포켓몬을 뭘까요?</p>
+        </div>
+        <div class="menuBox">
+            <h2>타입</h2>
+            <input type="text" id="search" onkeyup="poketype()" placeholder="원하는 포켓몬의 타입을 선택하세요">
+        </div>
+    </header>
+        <ul id="menu">
+                <li><a href="#">normal</a></li>
+                <li><a href="#">fire</a></li>
+                <li><a href="#">water</a></li>
+                <li><a href="#">grass</a></li>
+                <li><a href="#">electric</a></li>
+                <li><a href="#">dragon</a></li>
+                <li><a href="#">flying</a></li>
+                <li><a href="#">phychic</a></li>
+                <li><a href="#">fighting</a></li>
+        </ul>
+        <div class="pokemonBox">
+            <h2>타입</h2>
+            <p>원하는 포켓몬의</p>
+            <p>타입을 선택하세요!</p>
+        </div>
+    
+    <script>
+        let type = document.querySelector(".pokemonBox").innerHTML;
+
+        let typeColors = {
+            "normal": "gray",
+            "fire": "red",
+            "water": "blue",
+            "grass": "green",
+            "electric": "yellow",
+            "dragon": "purple",
+            "flying": "skyblue",
+            "phychic": "pink",
+            "fighting": "orange"
+        };
+
+        let typeImages = {
+        "normal": "../img/pokemon/노말.jpg",
+        "fire": "../img/pokemon/불꽃.jpg",
+        "water": "../img/pokemon/물.jpg",
+        "grass": "../img/pokemon/풀.jpg",
+        "electric": "../img/pokemon/전기.jpg",
+        "dragon": "../img/pokemon/드래곤.jpg",
+        "flying": "../img/pokemon/비행.jpg",
+        "phychic": "../img/pokemon/에스퍼.jpg",
+        "fighting": "../img/pokemon/격투.jpg"
+    };
+
+        let pokemonData = {
+            "normal": ["잠만보", "이브이", "메타몽"],
+            "fire": ["파이리", "초염몽", "에이스번"],
+            "water": ["꼬부기", "가이오가", "엠페르트"],
+            "grass": ["이상해씨", "나무지기", "모부기"],
+            "electric": ["피카츄", "썬더", "파치리스"],
+            "dragon": ["한카리아스", "레쿠자", "망나뇽"],
+            "flying": ["깨비드릴조", "찌르호크", "파오리"],
+            "phychic": ["뮤", "마자용", "유크시"],
+            "fighting": ["카포에라", "창파나이트", "괴력몬"]
+        }
+        function poketype(){
+            let inputtype = document.querySelector("#search");
+            let up = inputtype.value.toUpperCase();
+            let li = document.querySelectorAll("#menu li");
+            li.forEach((item)=>{
+                let relative = item.querySelector("a");
+                if(relative.innerHTML.toUpperCase().indexOf(up)>-1){
+                    item.style.display = "";
+                }else{
+                    item.style.display = "none";
+                }
+            })
+        }
+
+        document.querySelectorAll("#menu li a").forEach((item)=>{
+            item.addEventListener("click",function(event){
+                event.preventDefault();
+                let tar = event.target.innerText.toLowerCase();
+                let pokemonBox = document.querySelector(".pokemonBox");
+
+                if (pokemonBox.querySelector("h2")?.innerText.toLowerCase() === tar) {
+                    pokemonBox.innerHTML = `
+                        <h2>타입</h2>
+                        <p>원하는 포켓몬의</p>
+                        <p>타입을 선택하세요!</p>
+                    `;
+                    pokemonBox.style.backgroundColor = "darkorange";
+                    pokemonBox.style.color = "black";
+                } else {
+                    let pokemonList = pokemonData[tar] || [];
+                    let pokemonEx = pokemonList.map(pokemon => `<li>${pokemon}</li>`).join("");
+                    let imgsrc = typeImages[tar] || "";
+                    pokemonBox.innerHTML = `
+                        <h2>${tar}</h2>
+                        <p>대표 포켓몬</p>
+                        <ul>${pokemonEx}</ul>
+                        <img src="${imgsrc}" style="width: 200px; height: auto;">
+                    `;
+                    pokemonBox.style.backgroundColor = typeColors[tar] || "darkorange";
+                    pokemonBox.style.color = "white";
+                }
+            })
+        })
+    </script>
+</body>
+</html>

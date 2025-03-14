@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;} ul{list-style: none;} a{text-decoration: none;}
+        body{
+            width: 100vw;
+            color: rgb(7,7,7); position: absolute;
+            overflow-x: hidden;
+        }
+        /* modal start--------------------------------------------------------------------------------- */
+            .modalbox{
+                width: 100vw; height: 100%; 
+                overflow: hidden;
+                background: rgb(0,104,98);
+                background: -moz-linear-gradient(90deg, rgba(0,104,98,1) 0%, rgba(0,206,138,1) 0100%);
+                background: -webkit-linear-gradient(90deg, rgba(0,104,98,1) 0%, rgba(0,206,138,1) 0100%);
+                background: linear-gradient(90deg, rgba(0,104,98,1) 0%, rgba(0,206,138,1) 0100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#006862",endColorstr="#00ce8a",GradientType=1);
+                position: absolute; top: -100%; left: 0;
+                color: white; z-index: 50; transition: 0.3s;
+            }
+            .modalbox.on{top: 0;}
+                .modaltop{position: relative; width: 100%; height: 100px;
+
+                }
+                .logo2{color: rgb(255, 255, 255); font-size: 70px; position: absolute; left: 5%;}
+                .clo{position: absolute; right: 5%; font-size: 30px; top: 30px;}
+                .mota{ margin-top: 30vh; width: 100%; height: 250px; color: white;}
+                .mod{ width: 80%; height: 250px; margin: auto; text-align: center;}
+                .mod tr {height: 30px;}
+                .mod th{ font-size: 20px; height: 50px;}
+                .mod th, td { width: 15%;}
+            .mini {color: white; width: 90%; height: 70px;
+                margin: auto; margin-top: 30px;
+                border-top: 0.5px solid white; border-bottom: 0.5px solid white;
+                align-content: center;
+            }
+            .address{width: 90%; color: rgba(255, 255, 255, 0.726); display: flex; margin: auto; margin-top: 10px; text-align: center;}
+            .address>div:nth-child(2){
+                height: 20px;
+                border-left: 0.3px solid rgba(255, 255, 255, 0.726); border-right: 0.3px solid rgba(255, 255, 255, 0.726); 
+                margin-left: 10px; margin-right: 10px; padding-left: 10px;  padding-right: 10px;
+            }
+        /* modal end*/
+        /* header */
+        header{
+            width: 100%;
+            height: 90px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.188);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .logo{
+                width: 10%;
+                height: 90px;
+                color: darkslategrey;
+                padding: 10px;
+                text-align: center;
+                font-size: 20px;
+                align-content: center;
+                position: relative;
+            }
+            .nav{
+                width: 70%;
+                height: 90px;
+                position: relative;
+                width: 100%; height: 100%; 
+                display: flex; justify-content: center; 
+                position: relative;text-align: center;
+            }
+                .menu{
+                    width: 17%;
+                    height: 100%;
+                    font-size: 15px;
+                    position: relative;
+                    align-content: center;
+                    top: -10px;
+                }
+                    .submenu{
+                        width: 100%;
+                        position: absolute;
+                        align-content: center;
+                        cursor: pointer;
+                    }
+                    .submenuBox{
+                        width: 100%;
+                        height: 0px;
+                        opacity: 0;
+                        position: relative;
+                        top: 0px;
+                        font-size: 15px;
+                        background-color: white;
+                        box-shadow: 0px 0px 2px black;
+                        border-radius: 10px;
+                        transition: 0.5s;
+                        z-index: 10;
+                    }
+                        .submenuBox>div{
+                            width: 100%; height: 10px; margin-top: 10px; align-content: center;}
+                        .submenu:hover .submenuBox{opacity: 1; height: 110px; top: 5px;}
+                            .submenuBox>div{padding-top: 10px;}
+        .icon{width: 10%; display: flex; align-items: center; position: relative;}
+            .kore{ 
+                width: 30px; height: 15px; 
+                border-radius: 5px; background-image: url(../img/xormr.png); 
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover; margin-right: 20px;
+                transition: 0.5s;
+            }
+            .EanC{
+                display: none; width: 90px; height: 50px; top: 30px; left: -60px;
+                text-align: center; align-content: center; border-radius: 10px; z-index: 10;
+                background-color: rgb(217, 217, 217);  position: absolute;}
+            .kore:hover .EanC{display: block;}
+        /* header end----------------------------------------- */
+        section{
+            width: 100%; height: 700px; overflow-x: hidden;  position: relative;}
+            .slidbox{
+                width: 600%;
+                height: 700px;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                transition: 0.7s;
+                left: 0;
+            }
+                .slidImg{
+                    width: 100%;
+                    height: 700px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: relative;
+                    left: 0; top: 0;
+                    transition: 0.7s;
+                }
+                .textbox{
+                    width: 470px;
+                    height: 300px;
+                    display: flex;
+                    margin-top: 200px;
+                    margin-left: 10%;
+                }
+                    .num{
+                        text-align: left; margin-right: 10px; font-size: 20px; 
+                        font-weight: 800;
+                    }
+                        .txt>div:nth-child(1){
+                            width: 70px; height: 30px;
+                            background-color: darkslategrey;
+                            color: white; border-radius: 3px;
+                            font-size: 20px; text-align: center;
+                            align-content: center; margin-bottom: 10px;
+                        }
+                        .txtbtn{
+                            width: 130px; height: 40px;
+                            background: linear-gradient(90deg, rgba(69,62,189,1) 0%, rgba(87,80,129,1) 0%, rgba(130,130,130,1) 0%, rgba(52,132,106,1) 50%, rgba(57,57,57,1) 100%, rgba(41,84,135,1) 100%, rgba(0,212,255,1) 100%);;
+                            color: white; border-radius: 25px;
+                            font-size: 15px; text-align: center;
+                            align-content: center; margin-top: 15px;
+                        }
+                        .txtbtn:hover{background-color: rgba(255, 255, 255, 0); border: 1px solid white; cursor: pointer;}
+                    .txt h1{font-size: 25px; display: block;margin-bottom: 60px;}
+                        .txt h4{font-size: 10px;}
+        /* 방향박스 */
+            .wbox{
+                width: 300px; 
+                height: 100px; 
+                background-color: rgb(255, 255, 255); position: absolute; bottom: 0%; right: 7%; align-content: center;
+            }
+            #movbar{width: 0%; height: 1.5px; background-color: black; margin-left: 30px; transition: 0.7s;}
+            .arrow{ width: 80%; height: 30px;  margin: auto;  display: flex; justify-content: center; margin-bottom: 10px; cursor: pointer;}
+        /* section 1 end */
+        /* section 2 start */
+        section:nth-child(2){width: 100vw; position: relative; top: 0; left: 0; align-content: center;}
+        #titbox{
+            width: 100%; height: 250px; 
+            text-align: center; align-content: center; transition: 0.5s;
+            position: relative; transform: scale(0.7); opacity: 0;
+        }
+        #titbox.on {transform: scale(1); opacity: 1;}
+            .titbox>h1{font-size: 40px; font-weight: 900;}
+        .iconsB{width: 100%; height: 300px; position: relative; 
+            display: flex; justify-content: center; align-items: center;
+        }
+                .ico{
+                    background-position: center; background-repeat: no-repeat; position: relative;
+                    left: 50%; transform: translateX(-50%); top: 60px; transition: 0.3s;
+                    background-size: cover; width: 80px; height: 80px;  }
+                #iconB1{background-image: url(../img/section01_icon01.png);}
+                #iconB2{background-image: url(../img/section01_icon02.png);}
+                #iconB3{background-image: url(../img/section01_icon03.png);}
+                #iconB4{background-image: url(../img/section01_icon04.png);}
+                #iconB5{background-image: url(../img/section01_icon05.png);}
+                .icoBt{position: relative; width: 100%; text-align: center; top: 70px; color: gray; transition: 0.3s;}
+                .re{position: relative; width: 100%; text-align: center; top: 40px; opacity: 0; transition: 0.2s; display: flex; justify-content: center; font-size: 13px;}
+                    .re>div:nth-child(2){width: 20px; height: 20px; text-align: center; align-content: center; margin-left: 10px;}
+                .iconsB>div:hover .icoBt {color: darkslategray; top: 40px;}
+                .iconsB>div:hover .ico{top: 30px;}
+                .iconsB>div:hover .re{top: 45px; opacity: 1;}
+                #icl1{width: 15%; height: 100%; position: absolute; left: 5%; top: 0;transition: 1s; opacity: 0;}
+                #icl2{width: 15%; height: 100%; position: absolute; left: 25%; top: 70px;transition: 1s; opacity: 0;}
+                #icm0{width: 15%; height: 100%; position: absolute; left: 50%; transform: translateX(-50%); top: -70px;transition: 1s; opacity: 0;}
+                #icr2{width: 15%; height: 100%; position: absolute; right: 25%; top: 70px;transition: 1s; opacity: 0;}
+                #icr1{width: 15%; height: 100%; position: absolute; right: 5%; transition: 1s; opacity: 0;}
+                #icl1.on{left: 10%; opacity: 1;}
+                #icl2.on{top: 0; opacity: 1;}
+                #icm0.on{top: 0 ; opacity: 1;}
+                #icr2.on{top: 0; opacity: 1;}
+                #icr1.on{right: 10%; opacity: 1;}
+        /* section2 end ---------------------------------------------------------------------------------- */
+        /* section3 ------------------------------------------------------------------------------------------------------------------------------------- */
+
+        section:nth-child(3){position: relative; background-color: aquamarine; width: 100vw; }
+        .sec3box{width: 100%; height: 100%; display: flex; justify-content: center; position: absolute; align-items: center;}
+            .sec3box>div{opacity: 0.4; transition: 1s;}
+            .sec3txt1{width: 20%; height: 300px; margin-right: 100px;}
+                .sec3txt1>div{display: flex; align-items: center; height: 30px; margin-top: 100px;}
+                .arrt3{width: 20px; height: 20px; margin-left: 10px; text-align: center; line-height: 20px; border-radius: 50%; background-color: yellowgreen; color: white;}
+            .sec3img1{ 
+                width: 15%; height: 150px; transform: scale(0.4);
+                background-image: url(../img/sec1.png); 
+                background-position: center; background-repeat: no-repeat; background-size: 90% auto;}
+            .st3{width: 0px; height: 80%;border-left: 1px dotted rgb(65, 65, 65); position: absolute;}
+            
+            .sec3img2{ 
+                width: 15%; height: 150px; transform: scale(0.4);
+                background-image: url(../img/sec2.png); background-position: center; 
+                background-repeat: no-repeat; background-size: auto 100%;}
+            .sec3txt2{width: 20%; height: 300px; margin-left: 100px; text-align: right;}
+                .sec3txt2>div{display: flex; justify-content: right; align-items: center; height: 30px; margin-top: 100px; text-align: right;}
+                    .arr2t3{width: 20px; height: 20px; margin-left: 10px; text-align: center; line-height: 20px; border-radius: 50%; background-color: darkslategray; color: white;}
+            .sec3txt1.on{ opacity: 1; margin-right: 50px;}
+            .sec3img1.on{ opacity: 1; transform: scale(1);}
+            .sec3txt2.on{ opacity: 1; margin-left: 50px;}
+            .sec3img2.on{ opacity: 1; transform: scale(1);}
+
+        /* footer------------ */
+            footer{width: 100%; height: 300px; background-color: rgb(9, 9, 9); position: relative; color: white;}
+            .fobox{width: 75%; height: 100%; position: relative; align-content: center; left: 50%; transform: translateX(-50%);}
+            .fotxt{width: 100%; height: 40px; display: flex; position: relative;}
+                .fotxt>div{width: 15%; }
+                .fam{position: absolute; right: 0; height: 35px; bottom: 20px; text-align: center; align-content: center; border-top: 0.1px solid rgba(255, 255, 255, 0.333); border-bottom: 1px solid rgba(255, 255, 255, 0.637);}
+            .fost{width: 100%; height: 0.3px; background-color: rgba(255, 255, 255, 0.185); margin-bottom: 30px; margin-top: 10px; }
+            .foad{width: 100%; height: 50px; color: rgba(255, 255, 255, 0.562); line-height: 30px;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="../img/erom.png"></div>
+        <div class="nav">
+            <div class="menu">
+                <div class="submenu">
+                    이룸그룹
+                    <div class="submenuBox">
+                        <div>이룸그룹</div>
+                        <div>황성주박사</div>
+                        <div>브랜드 아이덴티티</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="submenu">
+                    사업분야
+                    <div class="submenuBox">
+                        <div>BUSINESS</div>
+                        <div>GLOBAL</div>
+                        <div>BIO&MEDICAL</div>
+                    </div>
+                </div>
+            </div>    
+            <div class="menu">
+                <div class="submenu">
+                    이룸
+                    <div class="submenuBox">
+                        <div>두유</div>
+                        <div>생식.영양식</div>
+                        <div>주스.음료</div>
+                    </div>
+                </div>
+            </div>    
+            <div class="menu">
+                <div class="submenu">
+                    이룸플러스
+                    <div class="submenuBox">
+                        <div>생식&면역</div>
+                        <div>두유.음료</div>
+                        <div>건강기능/지향식품</div>
+                    </div>
+                </div>
+            </div>    
+            <div class="menu">
+                <div class="submenu">
+                    뉴스&홍보
+                    <div class="submenuBox">
+                        <div>이룸소식</div>
+                        <div>미디어센터</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="submenu">
+                    이룸人
+                    <div class="submenuBox">
+                        <div>이룸人</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="icon">
+            <div class="ko">
+                <div class="kore">
+                    <div class="EanC">
+                        <div>English</div>
+                        <div>China</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bar"><i class="xi-bars"></i></div>
+        </div>
+    </header>
+    <!-- header end ------------------------------------------------------------------------------->
+    <!-- section 1 -->
+    <section>
+        <div class="slidbox">
+            <div class="slidImg">
+                <div class="textbox">
+                    <div class="num">01</div>
+                    <div class="txt">
+                        <div>이룸</div>
+                        <h1>먹거리에서 생활습관까지<br>건강한 개인과 사회에 기여하겠습니다.</h1>
+                        <h4>이룸은 지나칠수 있는 자연에서 인간에게 유인한 힘을 발견하는 지혜<br>
+                        과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다</h4>
+                        <div class="txtbtn">자세히보기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slidImg">
+                <div class="textbox">
+                    <div class="num">02</div>
+                    <div class="txt">
+                        <div>이룸</div>
+                        <h1>먹거리에서 생활습관까지<br>건강한 개인과 사회에 기여하겠습니다.</h1>
+                        <h4>이룸은 지나칠수 있는 자연에서 인간에게 유인한 힘을 발견하는 지혜<br>
+                        과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다</h4>
+                        <div class="txtbtn">자세히보기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slidImg">
+                <div class="textbox" style="color: white;">
+                    <div class="num">03</div>
+                    <div class="txt">
+                        <div>이룸</div>
+                        <h1>먹거리에서 생활습관까지<br>건강한 개인과 사회에 기여하겠습니다.</h1>
+                        <h4>이룸은 지나칠수 있는 자연에서 인간에게 유인한 힘을 발견하는 지혜<br>
+                        과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다</h4>
+                        <div class="txtbtn">자세히보기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slidImg">
+                <div class="textbox" style="color: white;">
+                    <div class="num">04</div>
+                    <div class="txt">
+                        <div>이룸</div>
+                        <h1>먹거리에서 생활습관까지<br>건강한 개인과 사회에 기여하겠습니다.</h1>
+                        <h4>이룸은 지나칠수 있는 자연에서 인간에게 유인한 힘을 발견하는 지혜<br>
+                        과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다</h4>
+                        <div class="txtbtn">자세히보기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slidImg">
+                <div class="textbox" style="color: white;">
+                    <div class="num">05</div>
+                    <div class="txt">
+                        <div>이룸</div>
+                        <h1>먹거리에서 생활습관까지<br>건강한 개인과 사회에 기여하겠습니다.</h1>
+                        <h4>이룸은 지나칠수 있는 자연에서 인간에게 유인한 힘을 발견하는 지혜<br>
+                        과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다</h4>
+                        <div class="txtbtn">자세히보기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slidImg">
+                <div class="textbox">
+                    <div class="num">01</div>
+                    <div class="txt">
+                        <div>이룸</div>
+                        <h1>먹거리에서 생활습관까지<br>건강한 개인과 사회에 기여하겠습니다.</h1>
+                        <h4>이룸은 지나칠수 있는 자연에서 인간에게 유인한 힘을 발견하는 지혜<br>
+                        과학의 힘으로 자연을 담아 건강에 대한 새로운 해답을 제공해 나가겠습니다</h4>
+                        <div class="txtbtn">자세히보기</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wbox">
+            <div class="arrow">
+                <div class="arrow" id="lefta">←</div>
+                <div id="cur">01/05</div>
+                <div class="arrow" id="righta">→</div>
+            </div>
+            <div id="movbar"></div>
+        </div>
+    </section>
+    <!-- scetion 1 end -------------------------------------------------------------------------- -->
+    <!-- section 2 ------------------------------------------------------- -->
+    <section style="background-color: rgb(250, 250, 250); height: 500px; overflow: hidden;">
+        <div id="titbox">
+            <h1>위대함을 향한 이롬의 끊임없는 도전과 혁신</h1><br>
+            <span>끊임없는 도전과 혁신으로 최적화된 제품을 개발, 유통하여<br><b>건강한 개인과 건강한 사회에 기여하는 라이프케어 컴퍼니</b></span>
+        </div>
+        <div class="iconsB">
+            <div id="icl1">
+                <div class="ico" id="iconB1"></div>
+                <div class="icoBt"><h2>BUSINESS</h2></div>
+                <div class="re">
+                    <div>자세히보기</div><div style="border-radius: 50%; background-color: darkseagreen;">→</div>
+                </div>
+            </div>
+            <div id="icl2">
+                <div class="ico" id="iconB2"></div>
+                <div class="icoBt"><h2>GLOBAL</h2></div>
+                <div class="re">
+                    <div>자세히보기</div><div style="border-radius: 50%; background-color: darkseagreen;">→</div>
+                </div>
+            </div>
+            <div id="icm0">
+                <div class="ico" id="iconB3"></div>
+                <div class="icoBt"><h2>BIO&MEDICAL</h2></div>
+                <div class="re">
+                    <div>자세히보기</div><div style="border-radius: 50%; background-color: darkseagreen;">→</div>
+                </div>
+            </div>
+            <div id="icr2">
+                <div class="ico" id="iconB4"></div>
+                <div class="icoBt"><h2>HUMAN</h2></div>
+                <div class="re">
+                    <div>자세히보기</div><div style="border-radius: 50%; background-color: darkseagreen;">→</div>
+                </div>
+            </div>
+            <div id="icr1">
+                <div class="ico" id="iconB5"></div>
+                <div class="icoBt"><h2>EDUCATION</h2></div>
+                <div class="re">
+                    <div>자세히보기</div><div style="border-radius: 50%; background-color: darkseagreen;">→</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section 3 ---------------------------------------------------------------------------- -->
+    <section style="height: 600px;">
+        <div class="sec3box">
+            <div class="sec3txt1">
+                <h4>e r o m</h4>
+                <h1>이롬</h1>
+                <span>건강한 개인과 건강한 사회에 기여하는<br>
+                    토탈 라이프케어 컴퍼니</span>
+                <div>자세히보기<div class="arrt3">→</div></div>
+            </div>
+            <div class="sec3img1"></div>
+            <div class="st3"></div>
+            <div class="sec3img2"></div>
+            <div class="sec3txt2">
+                <h4>e r o m +</h4>
+                <h1>이롬플러스</h1>
+                <span>건강한 라이프스타일,<br>
+                    이롬플러스가 함께합니다</span>
+                <div>자세히보기<div class="arr2t3">→</div></div>
+            </div>
+        </div>
+    </section>
+    <!-- section 3 end ------------------------------- -->
+
+    <!-- footer ---------------------------------------------------->
+    <footer>
+        <div class="fobox">
+            <div class="fotxt">
+                <div><h3>개인정보처리방침</h3></div>
+                <div><h3>이용약관</h3></div>
+                <div class="fam">Family Site</div>
+            </div>
+            <div class="fost"></div>
+            <div class="foad">
+                <span>ADDRESS: 이 홈페이지는 학습을 위해 실제 홈페이지를 따라 만들어 본것으로 실존하는 erom사 홈페이지와는 무관합니다</span>
+                <span>TEL: 080-123-4567 | EMAIL: abcderom@erom.co.kr</span><br>
+                <span>copyright (c) eromm GROUP all rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- modalbox -->
+    <div class="modalbox">
+        <div class="modaltop">
+            <div class="logo2">erom</div>
+            <div class="clo"><i class="xi-close-thin"></i></div>
+        </div>
+        <div class="mota">
+            <table class="mod">
+                <tr>
+                    <th>이롬그룹</th>
+                    <th>사업분야</th>
+                    <th>이롬</th>
+                    <th>이롬플러스</th>
+                    <th>뉴스&홍보</th>
+                    <th>이롬人</th>
+                </tr>
+                <tr>
+                    <td>이롬그룹</td>
+                    <td>BUSINESS</td>
+                    <td>두유</td>
+                    <td>생식&면역</td>
+                    <td>이롬소식</td>
+                    <td>이롬人</td>
+                </tr>
+                <tr>
+                    <td>황성주박사</td>
+                    <td>GLOBAL</td>
+                    <td>생식.영양식</td>
+                    <td>두유.음료</td>
+                    <td>미디어센터</td>
+                    <td>이롬人</td>
+                </tr>
+                <tr>
+                    <td>브랜드 아이덴티티</td>
+                    <td>BIO&MEDICAL</td>
+                    <td>주스.음료</td>
+                    <td>건강기능/지향식품</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="mini">개인정보처리방침 &nbsp;이용약관</div>
+        <div class="address">
+            <div>ADDRESS: 이 홈페이지는 학습을 위해 실제 홈페이지를 따라 만들어 본것으로 실존하는 erom사 홈페이지와는 무관합니다</div>
+            <div>TEL: 031-123-4567</div><div>EMAIL: abcderom@erom.co.kr</div>
+        </div>
+    </div>
+    <script>
+        let slidbox=document.querySelector(".slidbox");
+        let slidImg=document.querySelectorAll(".slidImg");
+        let imgs=["qqq.png","www.png","eee.png","rrr.png","ttt.png","qqq.png"];
+        let count=0;
+        let bar = document.querySelector(".bar");
+        let modalbox = document.querySelector(".modalbox");
+        let clo = document.querySelector(".clo");
+        
+        let leftB = document.getElementById("lefta");
+        let rightB = document.getElementById("righta");
+        let textvalue = document.getElementById("cur");
+        let movbar = document.getElementById("movbar");
+        let conum=1;
+        
+        // 모달 시작
+        bar.addEventListener("click", function(){
+            modalbox.classList.add("on");
+        });
+        clo.addEventListener("click", function(){
+            modalbox.classList.remove("on");
+        });
+        //모달 끝
+        //슬라이드
+        slidImg.forEach((img,index)=>{
+            img.style.backgroundImage=`url("../img/${imgs[index]}")`;
+        });
+
+
+        function playslid(tanfTransi){
+            slidbox.style.transition="0.7s";
+            slidbox.style.left=`-${count*100}vw`;
+            if(count>=slidImg.length){
+                count=0;
+                setTimeout(()=>{
+                    slidbox.style.transition="none";
+                    slidbox.style.left=`-${count*100}vw`;
+                },5);
+            }
+            if(conum==5){
+                textvalue.innerText= "0"+1+"/05"; conum=0;
+            }else{
+                conum++;
+                textvalue.innerText= "0"+conum+"/05"; 
+            }
+            movbar.style.width=`${conum*15}%`;
+        }
+
+        function nextslide(){
+            count++;
+            playslid(true);
+            
+            if(count >= inboxs.length){
+                setTimeout(()=>{
+                    count =0;
+                    playslid(false);
+                },5);
+            } else{
+                playslid(true);
+            }
+        }
+
+        function leftMov(){
+            if(count==0){
+                count = 5; conum=5;
+                playslid(false);
+            }
+            if(conum<=0){
+                conum=6;
+            }
+            count--; conum-=2;
+            playslid(true)
+        }
+
+        let stopT = setInterval(nextslide, 3000);
+
+        function stopAuto()
+        {
+            clearInterval(stopT);
+        }
+
+        rightB.addEventListener("click",function(){
+            stopAuto();
+            nextslide();
+        })
+
+        leftB.addEventListener("click", function(){
+            stopAuto();
+            leftMov();
+        })
+
+        //슬라이드 끝
+
+        //스크롤
+        window.addEventListener("scroll", function(){
+            let titbox = document.querySelector("#titbox");
+            let scrY = window.scrollY;
+            let wh = window.innerHeight;
+            let textTop = titbox.offsetTop;
+            let icl1 = document.querySelector("#icl1");
+            let icl2 = document.querySelector("#icl2");
+            let icm0 = document.querySelector("#icm0");
+            let icr2 = document.querySelector("#icr2");
+            let icr1 = document.querySelector("#icr1");
+            let sec3txt1 = document.querySelector(".sec3txt1");
+            let sec3img1 = document.querySelector(".sec3img1");
+            let sec3txt2 = document.querySelector(".sec3txt2");
+            let sec3img2 = document.querySelector(".sec3img2");
+
+            if( scrY + wh >= textTop + 1000){
+                titbox.classList.add("on");
+            }else {
+                titbox.classList.remove("on");
+            }
+            if( scrY + wh >= textTop + 900){
+                titbox.classList.add("on");
+            }else {
+                titbox.classList.remove("on");
+            }
+            if( scrY + wh >= textTop + 1400){
+                icl1.classList.add("on");
+                icl2.classList.add("on");
+                icm0.classList.add("on");
+                icr2.classList.add("on");
+                icr1.classList.add("on");
+            }else {
+                icl1.classList.remove("on");
+                icl2.classList.remove("on");
+                icm0.classList.remove("on");
+                icr2.classList.remove("on");
+                icr1.classList.remove("on");
+            }
+            if( scrY + wh >= textTop + 1000){
+                icl1.classList.add("on");
+                icl2.classList.add("on");
+                icm0.classList.add("on");
+                icr2.classList.add("on");
+                icr1.classList.add("on");
+            }else {
+                icl1.classList.remove("on");
+                icl2.classList.remove("on");
+                icm0.classList.remove("on");
+                icr2.classList.remove("on");
+                icr1.classList.remove("on");
+            }
+
+            if( scrY + wh >= textTop + 1800){
+                sec3txt1.classList.add("on");
+                sec3img1.classList.add("on");
+                sec3txt2.classList.add("on");
+                sec3img2.classList.add("on");
+            }else {
+                sec3txt1.classList.remove("on");
+                sec3img1.classList.remove("on");
+                sec3txt2.classList.remove("on");
+                sec3img2.classList.remove("on");
+            }
+            if( scrY + wh >= textTop + 1400){
+                sec3txt1.classList.add("on");
+                sec3img1.classList.add("on");
+                sec3txt2.classList.add("on");
+                sec3img2.classList.add("on");
+            }else {
+                sec3txt1.classList.remove("on");
+                sec3img1.classList.remove("on");
+                sec3txt2.classList.remove("on");
+                sec3img2.classList.remove("on");
+            }
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>
