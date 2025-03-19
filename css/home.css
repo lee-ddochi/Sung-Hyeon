@@ -74,7 +74,7 @@ margin-top: 18rem; background-color: #002d72; color: #ffffff; height: 19rem;}
 .slogan{margin: 10rem auto; width: 40%; height: 30rem; position: relative; z-index: 1;
     position: relative; top: -48rem; display: block;
 display: flex; justify-content: start; border: 4px solid rgba(0,45,114,0.5);
-background-image: url(../image/home/sloganimage.png); background-position: center;
+background-image: url(./image/home/sloganimage.png); background-position: center;
 background-repeat: no-repeat; background-size: cover; border-radius: 20px 20px 10px 10px;}
 .slogan img {width: 300px; height: 100px; position: relative; top: 3rem; left: 27rem;
 opacity: 0; transition: opacity 2s ease-out;}

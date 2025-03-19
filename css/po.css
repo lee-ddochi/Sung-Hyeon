@@ -1,7 +1,7 @@
 *{  margin: 0; padding: 0; }
 body{width: 100vw; height: 100vh; box-sizing: border-box; overflow-x: hidden; margin: 0;
     padding: 0;
-}
+} a{ text-decoration: none;}
 img{ margin: 0; padding: 0;}
         header{display:flex; width: 100vw; height: 8rem; 
           align-items: center; 
@@ -493,7 +493,7 @@ img{ margin: 0; padding: 0;}
                 }
                 .out {
                     width: 100%;
-                    height: 40rem;
+                    height: 38rem;
                     background-color: black;
                 }
                 .imgbox {
@@ -516,22 +516,64 @@ img{ margin: 0; padding: 0;}
                     cursor: pointer;
                     border: 1px solid white;
                 }
-                .overlay {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.5);
-                    color: white;
+                .overlay{
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    opacity: 0;
-                    transition: opacity 0.5s;
-                    border-radius: 1rem;
-                    margin: 11rem;
+                    position: absolute;
+                    color: white;
+                    top: 220rem; left: 19rem;
+                    font-size: 1.2rem;
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-weight:bold;
+                font-style: normal;
                 }
-                .imgbox:hover .overlay {
-                    opacity: 1;
+                .overlay2{
+                    display: flex;
+                    position: absolute;
+                    color: white;
+                    top: 220rem; left: 44rem;
+                    font-size: 1.2rem;
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-weight:bold;
+                font-style: normal;
+                }
+                .overlay3{
+                    display: flex;
+                    position: absolute;
+                    color: white;
+                    top: 220rem; left: 70rem;
+                    font-size: 1.2rem;
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-weight:bold;
+                font-style: normal;
+                }
+                .overlay4{
+                    display: flex;
+                    position: absolute;
+                    color: white;
+                    top: 220rem; left: 94rem;
+                    font-size: 1.2rem;
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-weight:bold;
+                font-style: normal;
+                }
+                footer{
+                    width: 100%;
+                    height: 18%;
+                    background-color: #333;
+                    position: absolute;
+                }
+                .fff p{
+                    color: white;
+                    font-size: 1.2rem;
+                font-family: "Noto Sans KR", sans-serif;
+                font-optical-sizing: auto;
+                font-weight:bold;
+                font-style: normal;
+                text-align: center;
+                padding: 4.4rem;
+                margin: auto;
                 }
